@@ -4,7 +4,13 @@
 @import 'libs';
 @import 'global';
 .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     padding: 40px 0;
+    z-index: 10000000000000;
+    background-color: #fff;
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -167,8 +173,9 @@ footer {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $bg;
-    padding-top: 65px;
-    padding-bottom: 45px;
+    margin-top: 110px;
+    padding-top: 75px;
+    padding-bottom: 25px;
     &__container {
         max-width: 1560px;
     }
@@ -324,7 +331,7 @@ footer {
                     width: 150px;
                     padding: 10px 10px;
                     border-radius: 30px;
-                    background-color: rgba(209, 138, 32, 0.884);
+                    background-color: rgba(223, 210, 34, 0.884);
                 }
             }
         }

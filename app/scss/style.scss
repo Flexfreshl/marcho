@@ -230,6 +230,9 @@ footer {
         @extend %roboto-400;
         display: inline-block;
     }
+    &__text {
+        margin-bottom: 25px;
+    }
 }
 
 .top-slider {
@@ -770,6 +773,33 @@ footer {
         height: 8px;
         top: 7px;
         right: -14px;
+    }
+}
+
+.page-404 {
+    margin-top: 50px;
+    padding: 110px 0 120px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__content {
+        max-width: 570px;
+    }
+    &__title {
+        margin-right: 2px;
+        color: #28384f;
+        margin-bottom: 20px;
+        @extend %roboto-700;
+        font-size: 48px;
+    }
+    &__text {
+        width: 460px;
+        margin-bottom: 55px;
+    }
+    &__link {
+        @extend %btn;
     }
 }
 

@@ -87,3 +87,14 @@ a {
         color: inherit;
     }
 }
+
+.header--404-page {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 40px 0;
+    z-index: 10000;
+    opacity: .99;
+    background-color: $bg !important;
+}

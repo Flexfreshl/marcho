@@ -98,3 +98,46 @@ a {
     opacity: .99;
     background-color: $bg !important;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    .pagination__list {
+        display: flex;
+        align-items: center;
+        padding: 0 35px;
+    }
+    .pagination__item {
+        padding: 0 15px;
+    }
+    &__link--active {
+        color: $accent;
+    }
+    &__arrows {
+        text-transform: uppercase;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            height: 5px;
+            width: 10px;
+            top: -1px;
+        }
+    }
+    &__prev {
+        padding-left: 15px;
+        &::before {
+            content: '<';
+            left: 0;
+        }
+    }
+    &__next {
+        padding-right: 15px;
+        &::before {
+            content: '>';
+            right: 0;
+        }
+    }
+}

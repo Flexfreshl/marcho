@@ -12,6 +12,7 @@ $(function() {
 
 
 
+
     $('.product-slide__thumb').slick({
         asNavFor: '.product-slide__big',
         focusOnSelect: true,
@@ -81,6 +82,8 @@ $(function() {
         });
 
     });
+
+
 
     function getTimeRemaining(endtime) {
         const total = Date.parse(endtime) - Date.parse(new Date());

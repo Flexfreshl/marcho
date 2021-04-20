@@ -874,6 +874,33 @@ footer {
     }
 }
 
+.blog-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    &__author {}
+    &__data {}
+    &__author,
+    &__data {
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 0;
+            top: 0;
+        }
+    }
+    &__author::before {
+        background-image: url('../images/icons/user-gray.svg');
+    }
+    &__data::before {
+        background-image: url('../images/icons/time-gray.svg');
+    }
+}
+
 .page-404 {
     margin-top: 50px;
     padding: 110px 0 120px;
@@ -1645,6 +1672,367 @@ footer {
         .product-item__title {
             padding: 5px 0;
         }
+    }
+}
+
+.blog-page {
+    padding: 120px 0 60px;
+    &__item--slider {
+        .blog-page__item-box {
+            margin-top: -8px;
+        }
+    }
+    &__slider {
+        .slick-next,
+        .slick-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 40px;
+            height: 40px;
+            background-color: $accent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slick-disabled {
+            background-color: #fff;
+            path {
+                fill: $accent;
+            }
+        }
+        .slick-next {
+            right: 40px;
+        }
+        .slick-prev {
+            left: 40px;
+        }
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__content {
+        max-width: 770px;
+        margin-right: 30px;
+    }
+    &__link {
+        display: block;
+    }
+    &__item {
+        margin-bottom: 60px;
+        &.blog-page__item--no-image {
+            border-top: 1px solid #ececec;
+        }
+    }
+    &__img {
+        max-width: 770px;
+        height: 450px;
+        object-fit: cover;
+    }
+    &__item-box {
+        border: 1px solid #ececec;
+        border-top: none;
+        padding: 20px 40px;
+    }
+    &__item-link {
+        display: block;
+        color: $title;
+        font-size: 22px;
+        @extend %roboto-700;
+        transition: all .3s;
+        &:hover {
+            color: $accent;
+        }
+    }
+    &__item-title {
+        margin-bottom: 20px;
+    }
+    &__aside {
+        width: 370px;
+    }
+}
+
+.person {
+    text-align: center;
+    padding: 40px 25px;
+    margin-bottom: 50px;
+    &__image {
+        display: inline-block;
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        margin: 0 auto 15px;
+    }
+    &__name {
+        color: $title;
+        font-size: 18px;
+        @extend %roboto-700;
+    }
+    &__position {
+        color: $accent;
+        margin-bottom: 15px;
+    }
+    &__text {
+        margin-bottom: 15px;
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__item+.person__item {
+        margin-left: 15px;
+    }
+    &__link {
+        path {
+            fill: $default;
+            transition: all .3s;
+        }
+        &:hover {
+            path {
+                fill: $accent;
+            }
+        }
+    }
+}
+
+.blog-one {
+    &__box {
+        border: 1px solid #f6f6f6;
+    }
+    &__content {}
+    &__text {
+        h4 {
+            @extend %roboto-700;
+            font-size: 26px;
+            color: $title;
+            margin-bottom: 25px;
+            display: block;
+        }
+        p {
+            margin: 25px 0;
+        }
+        blockquote {
+            background: #f6f6f6;
+            border-left: 2px solid red;
+            padding: 35px;
+        }
+        padding: 30px;
+        margin-top: -1px;
+        box-shadow: 0px 7px 20px 0px rgba(92,
+        91,
+        91,
+        0.178);
+    }
+    &__img-left {
+        float: left;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+    &__img-right {
+        float: right;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+    &__info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    &__info-link {
+        @extend %quicksand-500;
+        margin-right: 30px;
+        padding-left: 28px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 3px;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background-color: red;
+        }
+    }
+    &__info-item--comment {}
+    &__info-item--author {}
+    &__form-title {
+        text-transform: uppercase;
+        color: $title;
+        margin: 35px 0 25px;
+        font-size: 24px;
+        @extend %roboto-700;
+    }
+    &__boxing {
+        margin: 25px 0 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__tags,
+    &__share {
+        span {
+            text-transform: uppercase;
+            color: $title;
+            margin-right: 10px;
+        }
+    }
+    &__share {
+        a {
+            margin-right: 12px;
+            vertical-align: middle;
+            path {
+                fill: $default;
+                transition: all .3s;
+            }
+            &:hover {
+                path {
+                    fill: $accent;
+                }
+            }
+        }
+    }
+    &__author {
+        border-bottom: 1px solid #ececec;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__author-img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        margin-right: 30px;
+    }
+    &__author-name {
+        margin-bottom: 24px;
+        font-size: 22px;
+        @extend %roboto-700;
+        color: $title;
+    }
+    &__comments-title {
+        margin-bottom: 25px;
+        font-size: 24px;
+        text-transform: uppercase;
+        @extend %roboto-700;
+        color: $title;
+    }
+}
+
+.map {
+    padding: 120px 0;
+}
+
+#map {
+    width: 100%;
+    height: 440px;
+}
+
+.contact {
+    padding-bottom: 120px;
+    &__inner {
+        display: flex;
+    }
+    &__info {
+        max-width: 370px;
+        margin-right: 30px;
+    }
+    &__info-title {
+        font-size: 48px;
+        line-height: 50px;
+        @extend %roboto-400;
+        color: $title;
+        margin-bottom: 20px;
+    }
+    &__info-text {
+        margin-bottom: 60px;
+    }
+    &__info-item {
+        margin-top: 55px;
+        padding-left: 80px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ececec;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('../images/icons/phone_icon.svg');
+            left: 20px;
+            top: 15px;
+        }
+    }
+    &__info-item--location::after {
+        background-image: url('../images/icons/location-icon.svg');
+        width: 14px;
+        left: 23px;
+    }
+    &__info-item--email::after {
+        background-image: url('../images/icons/Shape_12.svg');
+        left: 21px;
+        width: 18px;
+    }
+    &__info-phone {
+        display: block;
+        color: $title;
+    }
+    &__form {
+        padding: 60px 0 60px 40px;
+        width: 100%;
+    }
+    &__form-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input {
+            width: 330px;
+        }
+    }
+    &__form-title {
+        font-size: 22px;
+        @extend %roboto-700;
+        color: $title;
+        margin-bottom: 20px;
+    }
+    &__form-input {
+        width: 100%;
+        display: block;
+        background-color: $bg;
+        border: none;
+        padding: 24px;
+        margin-bottom: 30px;
+    }
+    &__form-textarea {
+        width: 100%;
+        display: block;
+        resize: none;
+        height: 200px;
+        background-color: $bg;
+        border: none;
+        padding: 24px;
+        margin-bottom: 30px;
+    }
+    &__form-btn {
+        @extend %btn;
+        border: none;
+        outline: none;
     }
 }
 
